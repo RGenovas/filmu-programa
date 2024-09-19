@@ -1,0 +1,19 @@
+.search-input{
+    text-align: center;
+}
+
+.search-input h2{
+    font-size: 32px;
+}
+
+.search-input input{
+    width:50%;
+    height:30px;
+    border-radius:5px;
+}
+
+.search-input button {
+    border-radius:5px;
+    height:30px;
+    width:80px;
+}
