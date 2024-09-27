@@ -8,8 +8,8 @@ body{
 
 .top-movies {
     margin:0 auto;
-    padding:20px;
-    width:70%;
+    padding:10px;
+    width:75%;
     display:grid;
     align-items: center;
     justify-content: center;
@@ -26,8 +26,6 @@ h3 {
     font-family: "Creepster", system-ui;
     letter-spacing: 5px;
     text-shadow: 2px 2px 5px #111010;
-    text-decoration: underline;
-    
 }
 
 .movie_name {
@@ -43,6 +41,7 @@ h3 {
 .poster {
     width:200px;
     height:250px;
+    border-radius:20px;
 }
 
 .movie-description{
@@ -51,11 +50,13 @@ h3 {
     font-size:18px;
     height:200px;
     text-align: left;
+    font-family: serif, sans-serif;
 }
 
 .movie-details {
 
     color: #bbb7b7;
+
     font-weight:800;
     border:2px solid rgb(243, 234, 234);
     border-radius: 10px;
@@ -73,12 +74,19 @@ h3 {
 button {
     padding:10px;
     border:none;
-    border-radius:20px;
+    border-radius:10px;
     background-color: #6d6969;
     color:#bbb7b7;
+    margin:0.5px;
 
 }
 
 button:hover {
 background-color: crimson;
+}
+
+.trailer-btn {
+  border:1px solid rgb(238, 165, 165);
+  font-weight:400;
+  
 }

@@ -10,7 +10,7 @@ const Header = () => {
     <NavLink to="/"><h2 className='logo'>Horror DB</h2></NavLink>
 
     <div className="header-links nav">
-    <NavLink className='header-link' to='/search'>Search for movie </NavLink>
+    <NavLink className='header-link' to='/search'>Search</NavLink>
 
 
   
