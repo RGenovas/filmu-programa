@@ -1,5 +1,7 @@
 body {
     margin:0;
     padding:0;
-    background-color: thistle;
+    background: radial-gradient(circle, rgba(238,39,0,1) 0%, rgba(236,39,17,0.9976365546218487) 0%, rgba(70,68,65,1) 57%);
 }
+
+
