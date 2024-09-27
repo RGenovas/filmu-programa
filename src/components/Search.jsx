@@ -32,22 +32,22 @@ const Search = () => {
         <div className="search-input">
         <form onSubmit={handleSearch}>
             <h2>Search by title:</h2>
-            <input type="text" ref={moviesRef} />
+            <input className='searc-input' type="text" ref={moviesRef} />
             <button className='search-btn' type='submit'>Search</button>
         </form>
         </div>
     <div className="top-movies">
-        { movies.length > 0 &&
-            movies.map((movie) => (
-                <div key={movie.id} className='top-movie'>
-                <h4>{movie.title}</h4>
-                <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
-                <p>{movie.overview.slice(0,120) + '...'}</p>
-                <button><a href={'https://www.themoviedb.org/movie/' +movie.id} className='movieLink'>Skaityti toliau</a></button>
+    {
+      movies.map((movie) => (
+        <div key={movie.id} className='movie'>
+        <h4 className="movie_name">{movie.title} ({movie.release_date.slice(0,4)})</h4>
+        <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
+        <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
+        <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
         
-                </div>
-                ))
-        }
+         </div>
+      ))
+      }
     </div>
     </div>
 

@@ -5,6 +5,7 @@ import './Homepage.css'
 import Header from "../headerandfooter/Header"
 
 
+
 const Homepage = () => {
     const [movies, setMovies] = useState([])
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
@@ -34,7 +35,8 @@ const Homepage = () => {
         <h4 className="movie_name">{movie.title} ({movie.release_date.slice(0,4)})</h4>
         <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
-        <Link className="btn-link" to={`/details/${movie.id}`}>Read more</Link>
+        <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
+        
  
 
         </div>

@@ -69,3 +69,16 @@ h3 {
     border:none;
     color:#bbb7b7;
 }
+
+button {
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    background-color: #6d6969;
+    color:#bbb7b7;
+
+}
+
+button:hover {
+background-color: crimson;
+}
