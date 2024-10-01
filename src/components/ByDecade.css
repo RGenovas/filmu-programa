@@ -1,0 +1,25 @@
+.decade-name {
+    font-size:26px;
+    text-align: center;
+    font-family: "Creepster", system-ui;
+    font-size:30px;
+    color:rgb(233, 213, 213);
+    background-color: none;
+}
+
+.year-selection {
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   gap:10px;
+   
+}
+
+.year-selection select{
+    font-family: "Creepster", system-ui;
+    color:rgb(182, 29, 29);
+    font-size:40px;
+    background: none;
+    border:none;
+
+}

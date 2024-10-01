@@ -8,12 +8,12 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    padding:10px;
+    /* padding:10px; */
 }
 
 
 .header {
-    width:75%;
+    width:1200px;
     padding:10px;
     height:80px;
     display:flex;
@@ -39,6 +39,21 @@
     4px 16px 1px #900000;
 }
 
+.logo1 {
+    font-size:30px;
+    font-family: "Creepster", system-ui;
+    margin:0;
+    color:rgb(134, 125, 125);
+}
+
+.search {
+    font-size:30px;
+    font-family: "Creepster", system-ui;
+    margin:0;
+    color:rgb(207, 63, 63);
+    margin-right:1em;
+
+}
 
 
 .header-link {
@@ -51,6 +66,10 @@
 
 .header-links {
 margin-right:2em;
+display:flex;
+align-items: center;
+justify-content: center;
+gap:10px;
 }
 
 .header-links h3{
@@ -96,4 +115,6 @@ a:hover {
   4px 12px 1px #700000,
   4px 14px 1px #800000,
   4px 16px 1px #900000;
+  position:relative;
+  bottom:2px;
 }

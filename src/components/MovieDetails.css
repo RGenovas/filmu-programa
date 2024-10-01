@@ -1,40 +1,47 @@
 .entry-details {
-    width:1100px;
- 
-    margin: 0 auto;
-    padding:10px;
+    width:1200px;
+    margin: 3em auto;
     background-color: rgb(56, 47, 47);
     border-radius: 20px;
-    padding:20px;
-
-
-  
-
-}
-
-.entry {
-    margin:0 auto;
-    display:flex;
-    align-items: center;
  
-    
+  
 }
 
+.entry-details h4, .entry-details p {
+  
+    padding:0px;
+}
+.entry {
+    display:flex;
+    justify-content: center;
+}
+
+.genres {
+    padding:0;
+    font-style: italic;
+}
 .entry .movie_name {
    font-size:36px;
-   text-align: center;
+   /* text-align: center; */
 }
 
 .entry-details img{
+    margin-left:5em;
     width:400px;
     height:500px;
-    border-radius: 20px;
+    padding:20px;
+    border-radius:20px;
+
 }
 
 .entry-description{
     text-align: left;
     font-size:20px;
     color:#beb7b7;
-    text-align: center;
     height:500px;
+    padding:20px;
+}
+
+.return-btn {
+    margin-left:1em;
 }

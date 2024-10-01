@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom'
 import axios from 'axios'
 import './Homepage.css'
 import Header from "../headerandfooter/Header"
-import Modal from 'react-modal'
+
 
 const customStyles = {
   content: {
@@ -16,6 +16,7 @@ const customStyles = {
     background:'black'
   },
 };
+
 
 const Homepage = () => {
     const [movies, setMovies] = useState([])
@@ -59,11 +60,8 @@ const Homepage = () => {
         <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
         <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
-        <button  className="trailer-btn" onClick={() => setVisible(true)}>Youtube Trailer</button>
-        <Modal isOpen={visible}  style={customStyles}>
-          <h1>This would be a trailer</h1>
-          <button onClick={() =>setVisible(false)}>Close</button>
-        </Modal>
+        <Link to={`/trailer/${movie.id}`}><button  className="trailer-btn">Youtube Trailer</button></Link>
+
         
  
 

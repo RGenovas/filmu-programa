@@ -15,7 +15,7 @@ const Search = () => {
     let movie = moviesRef.current.value
         try {
           const response = await axios.get(
-            `https://api.themoviedb.org/3/search/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&query=${movie}`
+            `https://api.themoviedb.org/3/search/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&query=${movie}&with_genres=27`
           )
           setMovies(response.data.results)
          
