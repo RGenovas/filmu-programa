@@ -21,22 +21,24 @@ const ByDecade = () => {
     let {year} = useParams()
     const yearFrom = year + "-01" + "-01"
     const yearTo = year.substring(0, year.length - 1) + "9" +"-12" +"-31"
-    
+    const pages = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
     
 
     const [showYear, setShowYear] = useState('')
     const [movies, setMovies] = useState([])
     const [visible, setVisible] = useState(false)
+    const [page, setPage] = useState('1')
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
-    
+  
     
     useEffect(() => {
         const getMovies = async () => {
           try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/discover/movie?${key}&release_date.gte=${yearFrom}&release_date.lte=${yearTo}`
+              `https://api.themoviedb.org/3/discover/movie?${key}&include_video=false&language=en-US&primary_release_date.gte=${yearFrom}&primary_release_date.lte=${yearTo}&vote_count.gte=100&include_video=false&page=${page}&sort_by=popularity.desc`
             // `https://api.themoviedb.org/3/discover/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27&release_date.gte=1980-01-01&release_date.lte=1989-01-01`
+            // `https://api.themoviedb.org/3/discover/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27&primary_release_date.gte=1980-01-01&primary_release_date.lte=1989-01-01`
               
             )
             setMovies(response.data.results)
@@ -46,44 +48,28 @@ const ByDecade = () => {
             }
             getMovies() },[movies])
 
-
-
-    // const getMovies = async (e) => {
-    //   try {
-    //     const response = await axios.get(
-    //       `https://api.themoviedb.org/3/discover/movie?${key}&primary_release_year=${year}`
-    //     )
-    //     setMovies(response.data.results)
-    //     console.log(response.data.results)
-    //   } catch(error) {
-    //     console.error('Error fetching  top movie list', error)
-    //   }
-    //     }
-
       const handleChangeYear = (e) => {
-        year = e.target.value 
+        setPage(e.target.value)
+        
       }
  
   return (
     <div>
         <Header/>
-        <div className="year-selection">
         <h3>Top Horror movies by decade {year + "s"}</h3>
-        {/* <h3>Top Horror movies by year:</h3>
-    
+        <div className="year-selection">
+        <h3>Page:</h3>
         <select className="year-selection" onChange={handleChangeYear}>
-          <option value={1970}>1970</option>
-          <option value={1971}>1971</option>
-          <option value={1972}>1972</option>
-          <option value={1973}>1973</option>
-          <option value={1974}>1974</option>
-          <option value={1975}>1975</option>
-          <option value={1976}>1976</option>
-          <option value={1977}>1977</option>
-          <option value={1978}>1978</option>
-          <option value={1979}>1979</option>
-        </select> */}
+          {
+            pages.map((page)=>(
+              <option value={page}>{page}</option>
+            ))
+          }
+    
+        </select> 
 
+    
+       
         </div>
     <div className='top-movies'>
       {
