@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 import axios from 'axios';
 import Header from "../headerandfooter/Header";
-import {BrowserRouter as Router, Routes, Route, Link, useParams} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate} from 'react-router-dom'
 import './MovieDetails.css'
 import Modal from 'react-modal'
 const MovieDetails = () => {
+  let history = useNavigate();
+  const goBack = () => {
+    window.history.back();
+  };
 
   const {id} = useParams()
   const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5'
@@ -91,7 +95,7 @@ const MovieDetails = () => {
         
         <p className="entry-description-text">{entry.overview}</p>
         <button onClick={fetcTrailer}>Watch trailer</button>
-        <Link to='/'><button className="return-btn"> Return to frontpage </button></Link>
+          <button onClick={goBack} className="return-btn"> Return </button>
         </div>
            <Modal isOpen={visible}  style={customStyles} 
             animationType="slide"

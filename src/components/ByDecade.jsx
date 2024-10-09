@@ -4,17 +4,7 @@ import axios from 'axios'
 import './ByDecade.css'
 import Header from "../headerandfooter/Header"
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    background:'black'
-  },
-};
+
 
 
 const ByDecade = () => {
@@ -22,12 +12,7 @@ const ByDecade = () => {
     const yearFrom = year + "-01" + "-01"
     const yearTo = year.substring(0, year.length - 1) + "9" +"-12" +"-31"
     const pages = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-
-    
-
-    const [showYear, setShowYear] = useState('')
     const [movies, setMovies] = useState([])
-    const [visible, setVisible] = useState(false)
     const [page, setPage] = useState('1')
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
   
@@ -37,8 +22,6 @@ const ByDecade = () => {
           try {
             const response = await axios.get(
               `https://api.themoviedb.org/3/discover/movie?${key}&include_video=false&language=en-US&primary_release_date.gte=${yearFrom}&primary_release_date.lte=${yearTo}&vote_count.gte=100&include_video=false&page=${page}&sort_by=popularity.desc`
-            // `https://api.themoviedb.org/3/discover/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27&release_date.gte=1980-01-01&release_date.lte=1989-01-01`
-            // `https://api.themoviedb.org/3/discover/movie?api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27&primary_release_date.gte=1980-01-01&primary_release_date.lte=1989-01-01`
               
             )
             setMovies(response.data.results)
@@ -61,8 +44,8 @@ const ByDecade = () => {
         <h3>Page:</h3>
         <select className="year-selection" onChange={handleChangeYear}>
           {
-            pages.map((page)=>(
-              <option value={page}>{page}</option>
+            pages.map((page,key)=>(
+              <option key={key} value={page}>{page}</option>
             ))
           }
     
