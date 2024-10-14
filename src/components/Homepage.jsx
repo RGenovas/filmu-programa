@@ -3,6 +3,7 @@ import { Link} from 'react-router-dom'
 import axios from 'axios'
 import './Homepage.css'
 import Header from "../headerandfooter/Header"
+import Footer from "../headerandfooter/Footer"
 
 
 const customStyles = {
@@ -23,12 +24,10 @@ const Homepage = () => {
     const [visible, setVisible] = useState(false)
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
     useEffect(() => {
-        // `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
-          
         const getTopMovies = async () => {
           try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/discover/movie?${key}`
+              `https://api.themoviedb.org/3/discover/movie?${key}}&include_video=false&language=en-US`
             )
             setMovies(response.data.results)
           } catch(error) {
@@ -37,16 +36,7 @@ const Homepage = () => {
             }
             getTopMovies() },[])
 
-    const fetcTrailer= async(id) => { try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=$${key}`
-      )
-      console.log(response.data.results)
-    } catch(error) {
-      console.error('Error fetching  top movie list', error)
-    }
-
-    }
+    
  
   return (
     <div>
@@ -61,16 +51,13 @@ const Homepage = () => {
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
         <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
         <Link to={`/trailer/${movie.id}`}><button  className="trailer-btn">Youtube Trailer</button></Link>
-
-        
- 
-
         </div>
       ))
       }
+    
      
      </div> 
-     
+     <Footer/>
     </div>
   )
 }

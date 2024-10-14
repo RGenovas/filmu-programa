@@ -1,5 +1,7 @@
 .search-input{
     text-align: center;
+    font-family: "Creepster", system-ui;
+    color:rgb(221, 55, 55);
 }
 
 .search-input h2{
@@ -7,6 +9,7 @@
 }
 
 .search-input input{
+    font-family: "Creepster", system-ui;
     width:50%;
     height:30px;
     border-radius:5px;

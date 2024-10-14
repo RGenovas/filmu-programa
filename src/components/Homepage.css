@@ -34,7 +34,7 @@ h3 {
     color:#bbb7b7;
     letter-spacing: 2px;
     padding:10px;
-    height:50px;
+    height:60px;
 }
 
 
@@ -89,4 +89,93 @@ background-color: rgb(156, 17, 45);
   border:1px solid rgb(238, 165, 165);
   font-weight:400;
   
+}
+
+@media screen and (max-width: 768px) {
+    .top-movies {
+        margin:0 auto;
+        width:100%;
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        grid-template-columns: 200px 200px ;
+        gap:20px;
+        background-color: rgb(41, 39, 39);
+        padding-bottom:20px;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size:42px;
+        color:#bbb7b7;
+        font-family: "Creepster", system-ui;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 5px #111010;
+    }
+    
+    .movie_name {
+        font-size: 20px;
+        font-family: "Creepster", system-ui;
+        color:#bbb7b7;
+        letter-spacing: 2px;
+        padding:15px;
+        height:50px;
+    }
+    
+    
+    .poster {
+        width:100%;
+        height:250px;
+        border-radius:20px;
+    }
+    
+    .movie-description{
+        padding:5px;
+        color:#bbb7b7;
+        font-size:18px;
+        height:200px;
+        text-align: left;
+        font-family: serif, sans-serif;
+    }
+    
+    .movie-details {
+    
+        color: #bbb7b7;
+    
+        font-weight:800;
+        border:2px solid rgb(243, 234, 234);
+        border-radius: 10px;
+        height:100px;
+        border:2px solid white;
+    }
+    
+    
+    .details-btn {
+        background-color: none;
+        border:none;
+        color:#bbb7b7;
+    }
+    
+    button {
+        padding:10px;
+        border:none;
+        border-radius:10px;
+        background-color: #6d6969;
+        color:#bbb7b7;
+        margin:0.5px;
+    
+    }
+    
+    button:hover {
+    background-color: rgb(156, 17, 45);
+    }
+    
+    .trailer-btn {
+      border:1px solid rgb(238, 165, 165);
+      font-weight:400;
+      
+    }
+    
+
 }

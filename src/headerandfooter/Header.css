@@ -8,12 +8,13 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    /* padding:10px; */
 }
 
 
+
+
 .header {
-    width:1200px;
+    width:1220px;
     padding:10px;
     height:80px;
     display:flex;
@@ -24,6 +25,31 @@
     border-radius:20px;
 }
 
+
+
+
+
+.footer {
+    margin:2em auto;
+    width:1220px;
+    padding:10px;
+    height:80px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    background-color: #222325;
+    border-radius:20px;
+    flex-direction: row;
+
+ 
+}
+
+.credit {
+    color:#a0a1a5;
+    font-size:20px;
+    
+}
 .header .logo {
     margin:1em;
     font-family: "Creepster", system-ui;
@@ -39,11 +65,68 @@
     4px 16px 1px #900000;
 }
 
+.footer .logo {
+    margin:1em;
+    font-family: "Creepster", system-ui;
+    font-size:50px;
+    color:rgb(248, 12, 12);
+    text-shadow:
+    4px 4px 1px #300000,
+    4px 6px 1px #400000,
+    4px 8px 1px #500000,
+    4px 10px 1px #600000,
+    4px 12px 1px #700000,
+    4px 14px 1px #800000,
+    4px 16px 1px #900000;
+}
+
+
 .logo1 {
     font-size:30px;
     font-family: "Creepster", system-ui;
     margin:0;
     color:rgb(134, 125, 125);
+}
+
+
+.year-selection-menu {
+    border:none;
+    background: none;
+    font-family: "Creepster", system-ui;
+    font-size:30px;
+    color:#800000;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        width:100%;
+        height:80px;
+        display:flex;
+        align-items: center;
+        background-color: #222325;
+        justify-content: space-between;
+        flex-direction: row;
+        border-radius:20px;
+    }
+    
+    .header .logo {
+        margin:1em;
+        font-family: "Creepster", system-ui;
+        font-size:30px;
+        color:rgb(248, 12, 12);
+        text-shadow:
+        4px 4px 1px #300000,
+        4px 6px 1px #400000,
+        4px 8px 1px #500000,
+        4px 10px 1px #600000,
+        4px 12px 1px #700000,
+        4px 14px 1px #800000,
+        4px 16px 1px #900000;
+    }
+    
+
 }
 
 .search {
@@ -100,7 +183,6 @@ gap:10px;
 
 .footer-container h3 {
     margin-top:10px;
-    /* font-family: "Metal Mania", system-ui; */
     font-weight: 400;
     color:#d6c0c0;
 
