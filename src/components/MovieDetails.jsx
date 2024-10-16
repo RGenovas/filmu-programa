@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect,  useState } from "react"
 import axios from 'axios';
 import Header from "../headerandfooter/Header";
-import {BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import './MovieDetails.css'
 import Modal from 'react-modal'
+
+
+
 const MovieDetails = () => {
-  let history = useNavigate();
   const goBack = () => {
     window.history.back();
   };
@@ -82,6 +84,7 @@ const MovieDetails = () => {
         </div>
         <div className="entry-description">
         <h4 className="movie_name">{entry.title}</h4>
+        <h4>Rated : {entry.vote_average}</h4>
         <h4 style={{fontSize:"16px", fontStyle:"italic"}}>{entry.tagline}</h4>
         <p className="genres"> Genres: {
        genres.map((genre) => 

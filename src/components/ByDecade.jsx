@@ -21,7 +21,7 @@ const ByDecade = () => {
         const getMovies = async () => {
           try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/discover/movie?${key}&include_video=false&language=en-US&primary_release_date.gte=${yearFrom}&primary_release_date.lte=${yearTo}&vote_count.gte=100&include_video=false&page=${page}&sort_by=popularity.desc`
+              `https://api.themoviedb.org/3/discover/movie?${key}&include_video=false&language=en-US&primary_release_date.gte=${yearFrom}&primary_release_date.lte=${yearTo}&vote_count.gte=100&include_video=false&page=${page}&sort_by=vote_average.desc`
               
             )
             setMovies(response.data.results)
@@ -40,22 +40,12 @@ const ByDecade = () => {
     <div>
         <Header/>
         <h3>Top Horror movies by decade {year + "s"}</h3>
-        {/* <div className="year-selection">
-        <h3 className="year-selection">Page:</h3>
-        <select className="year-selection" onChange={handleChangeYear}>
-          {
-            pages.map((page,key)=>(
-              <option key={key} value={page}>{page}</option>
-            ))
-          }
-    
-        </select> 
-        </div> */}
     <div className='top-movies'>
       {
       movies.map((movie) => (
         <div key={movie.id} className='movie'>
         <h4 className="movie_name">{movie.title} ({movie.release_date.slice(0,4)})</h4>
+        <h4>{movie.vote_average}</h4>
         <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
         <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>

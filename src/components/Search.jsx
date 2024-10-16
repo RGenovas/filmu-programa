@@ -1,17 +1,51 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import axios from 'axios';
 import square from '../img/square.png'
 import './Search.css'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Header from '../headerandfooter/Header';
 
 
 const Search = () => {
     const [movies, setMovies] = useState([])
     const [error, setError] = useState('')
-    const moviesRef=useRef()
-
+    const moviesRef = useRef()
+    const {film} = useParams();
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
+
+    useEffect(() => {
+      const handleLoadSearch = async () => {
+       
+            try {
+              const response = await axios.get(
+                `https://api.themoviedb.org/3/search/movie?${key}&query=${film}`
+              )
+              setMovies(response.data.results)
+             
+            } catch(error) {
+              console.error('Error Fetching Entries', error)
+              setError(error)
+            }
+            console.log(movies)
+              }
+     handleLoadSearch() },[])
+
+const handleLoadSearch = async () => {
+      e.preventDefault()
+      
+          try {
+            const response = await axios.get(
+              `https://api.themoviedb.org/3/search/movie?${key}&query=${film}`
+            )
+            setMovies(response.data.results)
+           
+          } catch(error) {
+            console.error('Error Fetching Entries', error)
+            setError(error)
+          }
+          console.log(movies)
+            }
+    
     const handleSearch = async (e) => {
         e.preventDefault()
     let movie = moviesRef.current.value

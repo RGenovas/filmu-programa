@@ -47,6 +47,7 @@ const Homepage = () => {
       movies.map((movie) => (
         <div key={movie.id} className='movie'>
         <h4 className="movie_name">{movie.title} ({movie.release_date.slice(0,4)})</h4>
+        <p>{movie.vote_average}</p>
         <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
         <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
