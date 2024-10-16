@@ -72,8 +72,6 @@ const MovieDetails = () => {
             })
           })
 
-
-   
   return (
     <div>
         <Header/>
@@ -84,12 +82,13 @@ const MovieDetails = () => {
         </div>
         <div className="entry-description">
         <h4 className="movie_name">{entry.title}</h4>
-        <h4>Rated : {entry.vote_average}</h4>
+        <h4 className="movie_rating">  Rating: {parseFloat(entry.vote_average).toFixed(2)}
+        </h4>
         <h4 style={{fontSize:"16px", fontStyle:"italic"}}>{entry.tagline}</h4>
         <p className="genres"> Genres: {
        genres.map((genre) => 
         genre.name
-        ).join(' ,')}
+        ).join(', ')}
         </p>
        
         <p>Released: {entry.release_date}</p>

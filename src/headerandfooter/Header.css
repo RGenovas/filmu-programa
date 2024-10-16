@@ -42,6 +42,10 @@
     4px 16px 1px #900000;
 }
 
+a {
+    text-decoration: none;
+}
+
 .footer .logo {
     margin:1em;
     font-family: "Creepster", system-ui;
@@ -68,10 +72,11 @@
 
 .year-selection-menu {
     border:none;
+    width:100px;
     background: none;
     font-family: "Creepster", system-ui;
     font-size:30px;
-    color:#800000;
+    color:rgb(248, 12, 12);
 }
 
 .search {
@@ -85,39 +90,31 @@
 }
 
 .search:hover {
-    text-shadow: none;
+    text-shadow: rgb(124, 122, 113) 2px 0 10px;
+    background:none;
     position:relative;
     bottom:5px;
 
 }
 
-.search-form {
-    display:flex;
-    background-color: #222325;
-    padding:10px;
-    border-radius:20px;
 
-    
-}
 
 .search-input {
     background: #222325;
+    color:rgb(218, 205, 205);
+    font-size:20px;
+    font-family: "Creepster", system-ui;
 
 }
-.search-form button {
-    border:none;
-    width:30px;
+.search-btn {
+    background:none;
+
 }
 .search-close {
-    background-color: rgb(179, 63, 63);
-    color:#fff;
+    background:none;
+    color:#e24646;
 }
-.header-link {
-    font-family: "Creepster", system-ui;
-    font-size:30px;
-    color:rgb(233, 213, 213);
-    background-color: none;
-}
+
 
 
 .header-links {
@@ -126,6 +123,7 @@ display:flex;
 align-items: center;
 justify-content: center;
 gap:10px;
+
 }
 
 /* Footer */
@@ -160,12 +158,7 @@ gap:10px;
 }
 
 
-.header-link {
-    font-family: "Creepster", system-ui;
-    font-size:30px;
-    color:rgb(233, 213, 213);
-    background-color: none;
-}
+
 
 
 .header-links {
@@ -187,6 +180,4 @@ gap:10px;
 .active {
     text-decoration: none;
 }
-.active h3{color:#2a4c9b;}
- 
- a:not(.active) {text-decoration: none;}
+

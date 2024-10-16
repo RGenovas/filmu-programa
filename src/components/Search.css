@@ -1,26 +1,33 @@
-.search-input{
+
+
+.form-search {
+    height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+    margin-bottom:2em;
+  
+}
+
+.search-window-input{
     text-align: center;
+    width:400px;
+ 
     font-family: "Creepster", system-ui;
+    font-size:30px;
     color:rgb(221, 55, 55);
-}
-
-.search-input h2{
-    font-size: 32px;
-}
-
-.search-input input{
-    font-family: "Creepster", system-ui;
-    width:50%;
-    height:30px;
-    border-radius:5px;
     background-color: rgb(56, 47, 47);
-    color: #bbb;
-    font-size: 2em;
-    margin:1em;
+   
+    border-radius: 10px;
+    box-shadow: none;
 }
 
-.search-input button {
-    border-radius:5px;
-    height:30px;
-    width:80px;
+.search-window-btn {
+   height:40px;
+   color:rgb(221, 55, 55);
 }
+
+
+
+

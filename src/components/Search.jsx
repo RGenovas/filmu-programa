@@ -4,6 +4,8 @@ import square from '../img/square.png'
 import './Search.css'
 import { Link, useParams } from 'react-router-dom';
 import Header from '../headerandfooter/Header';
+import {RiKnifeBloodFill,  RiGhost2Fill} from "react-icons/ri"
+import Footer from '../headerandfooter/Footer';
 
 
 const Search = () => {
@@ -30,21 +32,6 @@ const Search = () => {
               }
      handleLoadSearch() },[])
 
-const handleLoadSearch = async () => {
-      e.preventDefault()
-      
-          try {
-            const response = await axios.get(
-              `https://api.themoviedb.org/3/search/movie?${key}&query=${film}`
-            )
-            setMovies(response.data.results)
-           
-          } catch(error) {
-            console.error('Error Fetching Entries', error)
-            setError(error)
-          }
-          console.log(movies)
-            }
     
     const handleSearch = async (e) => {
         e.preventDefault()
@@ -63,35 +50,41 @@ const handleLoadSearch = async () => {
           }
   return (
     <div>
-        <Header/>
-    <div className='searchwindow'>
-        <div className="search-input">
-        <form onSubmit={handleSearch}>
-            <h2>Search by title:</h2>
-            <input className='searc-input' type="text" ref={moviesRef} />
-            <button className='search-btn' type='submit'>Search</button>
-        </form>
+    <Header/>
+    <h3>Search by title:</h3>
+    <div className='search-form'>
+    <form  className='form-search' onSubmit={handleSearch}>
+       <input className='search-window-input' type="text" ref={moviesRef} />    <button className='search-window-btn' onClick={{handleSearch}}>Search</button>
+    </form>
         </div>
         {movies.length> 0 &&
     <div className="top-movies">
-    { 
+   {
       movies.map((movie) => (
         <div key={movie.id} className='movie'>
         <h4 className="movie_name">{movie.title} ({movie.release_date.slice(0,4)})</h4>
-        <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} ></img>
+        <h4 className="movie_rating"> <RiGhost2Fill/> Rating: {parseFloat(movie.vote_average).toFixed(2)}
+        </h4>
+        <img className='poster' src={'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path} alt="movie-poster"    onError={(e) => {
+                e.target.onerror = null;
+                e.target.src =
+                  "https://via.placeholder.com/200x300?text=No+Image";
+              }}/>
         <p className="movie-description">{movie.overview.slice(0,200) + '...'} </p>
         <Link  to={`/details/${movie.id}`}><button className="btn-link">Read more</button></Link>
         <Link to={`/trailer/${movie.id}`}><button  className="trailer-btn">Youtube Trailer</button></Link>
         </div>
       ))
       }
+    
      
       
     </div>
 }
+  <Footer/>
     </div>
 
-    </div>
+  
   )
 }
 export default Search

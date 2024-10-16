@@ -25,18 +25,26 @@ h3 {
     color:#bbb7b7;
     font-family: "Creepster", system-ui;
     letter-spacing: 5px;
-    text-shadow: 2px 2px 5px #111010;
+    text-shadow: rgb(124, 122, 113) 5px 0 10px;
 }
 
 .movie_name {
     font-size: 20px;
+    font-weight: bold;
     font-family: "Creepster", system-ui;
-    color:#bbb7b7;
-    letter-spacing: 2px;
-    padding:10px;
-    height:60px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: block;
+    color:#8d8b8b;
+    letter-spacing: 1px;
+    height:40px;
 }
 
+.movie_rating {
+    font-size: 20px;
+    color:#d1cbcb;
+    margin-top:3em;
+}
 
 .poster {
     width:100%;

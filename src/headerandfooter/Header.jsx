@@ -4,6 +4,7 @@ import { useState,  useRef } from "react"
 
 const Header = () => {
 const navigate = useNavigate()
+const pages  = 1
 const searched = useRef();
 const [showSearch, setShowSearch] = useState(false)
 
@@ -34,7 +35,7 @@ const searchSubmit = () => {
     <div className="header-links nav">
     <h2 className='logo1'>Top movies by decades:</h2>
         <select className="year-selection-menu" onChange={navigateDecade} >
-        <option className='header-link'>Select a decade</option>
+        <option className='header-link'>Decade</option>
         <option className='header-link' value={1950}>1950s</option>
         <option className='header-link' value={1960}>1960s</option>
           <option className='header-link' value={1970}>1970s</option>
