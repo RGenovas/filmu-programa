@@ -1,3 +1,14 @@
+A website design dedicated to Horror movies. Created using React + Vite, CSS and TheMovieDB API.
+
+*Not ready for mobile use yet. 
+
+Netlify link: https://horrordb.netlify.app/
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
