@@ -6,16 +6,12 @@
 /* Header */
 
 
-.header-container {
-    width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 
 
 .header {
+    margin: 0 auto;
     width:1220px;
     padding:10px;
     height:80px;
@@ -23,7 +19,6 @@
     align-items: center;
     background-color: #222325;
     justify-content: space-between;
-  
     border-radius:20px;
 }
 
