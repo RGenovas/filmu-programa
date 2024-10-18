@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
 import axios from 'axios';
-import square from '../img/square.png'
 import './Search.css'
 import { Link, useParams } from 'react-router-dom';
 import Header from '../headerandfooter/Header';
@@ -13,14 +12,14 @@ const Search = () => {
     const [error, setError] = useState('')
     const moviesRef = useRef()
     const {film} = useParams();
+    const [searchFilm, setSearchFilm] = useState(film)
     const key = 'api_key=53c258bb52d305146e19a71e58aa2cc5&with_genres=27'
-
     useEffect(() => {
+      
       const handleLoadSearch = async () => {
-       
             try {
               const response = await axios.get(
-                `https://api.themoviedb.org/3/search/movie?${key}&query=${film}`
+                `https://api.themoviedb.org/3/search/movie?${key}&query=${searchFilm}`
               )
               setMovies(response.data.results)
              
@@ -28,33 +27,26 @@ const Search = () => {
               console.error('Error Fetching Entries', error)
               setError(error)
             }
-            console.log(movies)
+       
               }
-     handleLoadSearch() },[])
+     handleLoadSearch() },[searchFilm])
 
-    
+     useEffect(() => {
+      setSearchFilm(film)
+      },[film])
+
     const handleSearch = async (e) => {
         e.preventDefault()
-    let movie = moviesRef.current.value
-        try {
-          const response = await axios.get(
-            `https://api.themoviedb.org/3/search/movie?${key}&query=${movie}`
-          )
-          setMovies(response.data.results)
-         
-        } catch(error) {
-          console.error('Error Fetching Entries', error)
-          setError(error)
-        }
-        console.log(movies)
-          }
+        let query = moviesRef.current.value 
+        setSearchFilm(query)
+    }
   return (
     <div>
-    <Header/>
+    <Header />
     <h3>Search by title:</h3>
     <div className='search-form'>
-    <form  className='form-search' onSubmit={handleSearch}>
-       <input className='search-window-input' type="text" ref={moviesRef} />    <button className='search-window-btn' onClick={{handleSearch}}>Search</button>
+    <form  className='form-search'  onSubmit={handleSearch} >
+       <input className='search-window-input' type="text" ref={moviesRef} placeholder={searchFilm}/>    <button className='search-window-btn' type='submit'>Search</button>
     </form>
         </div>
         {movies.length> 0 &&
