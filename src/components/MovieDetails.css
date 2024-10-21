@@ -45,3 +45,56 @@
 .return-btn {
     margin-left:1em;
 }
+
+@media screen and (max-width: 412px){ 
+
+    .entry-details {
+        margin:0 auto;
+        width:100%;
+        background-color: rgb(56, 47, 47);
+        border-radius: 0;
+    
+       
+     }
+    
+    .entry {
+        margin:0 auto;
+        padding:0;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .genres {
+        padding:0;
+        font-style: italic;
+    }
+    .entry .movie_name {
+       font-size:36px;
+       
+    }
+    
+    .entry-details img{
+        width:300px;
+        height:300px;
+        margin:0;
+      
+        border-radius:20px;
+    
+    }
+    
+    .entry-description{
+        font-size:20px;
+        color:#beb7b7;
+        height:500px;
+        padding:20px;
+    }
+    
+    .return-btn {
+        margin-left:1em;
+    }
+
+
+
+}

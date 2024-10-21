@@ -58,8 +58,6 @@ const MovieTrailer = () => {
             onRequestClose={() => setVisible(false) }>
            <iframe 
             className="trailer"
-            width="800px"
-            height="600px"
             src={trailer}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

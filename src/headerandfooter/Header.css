@@ -6,24 +6,15 @@
 /* Header */
 
 
-.header-container {
-    width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 .header {
+    margin: 0 auto;
     width:1220px;
     padding:10px;
     height:80px;
     display:flex;
     align-items: center;
     background-color: #222325;
-    justify-content: space-between;
-  
+    justify-content: space-around;
     border-radius:20px;
 }
 
@@ -78,6 +69,7 @@ a {
     font-family: "Creepster", system-ui;
     font-size:30px;
     color:rgb(248, 12, 12);
+    background:#222325;
 }
 
 .search {
@@ -182,3 +174,380 @@ gap:10px;
     text-decoration: none;
 }
 
+@media screen and (max-width: 992px){
+
+
+    .header {
+        margin: 0 auto;
+        width:900px;
+        padding:10px;
+        height:80px;
+        display:flex;
+        align-items: center;
+        background-color: #222325;
+        justify-content: space-between;
+        border-radius:20px;
+    }
+    
+    
+    .header .logo {
+        margin:1em;
+        font-family: "Creepster", system-ui;
+        font-size:30px;
+        color:rgb(248, 12, 12);
+        text-shadow:
+        4px 4px 1px #300000,
+        4px 6px 1px #400000,
+        4px 8px 1px #500000,
+        4px 10px 1px #600000,
+        4px 12px 1px #700000,
+        4px 14px 1px #800000,
+        4px 16px 1px #900000;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .footer .logo {
+        margin:1em;
+        font-family: "Creepster", system-ui;
+        font-size:30px;
+        color:rgb(248, 12, 12);
+        text-shadow:
+        4px 4px 1px #300000,
+        4px 6px 1px #400000,
+        4px 8px 1px #500000,
+        4px 10px 1px #600000,
+        4px 12px 1px #700000,
+        4px 14px 1px #800000,
+        4px 16px 1px #900000;
+    }
+    
+    
+    .logo1 {
+        font-size:30px;
+        font-family: "Creepster", system-ui;
+        margin:0;
+        color:rgb(134, 125, 125);
+    }
+    
+    
+    .year-selection-menu {
+        border:none;
+        width:100px;
+        background: none;
+        font-family: "Creepster", system-ui;
+        font-size:30px;
+        color:rgb(248, 12, 12);
+    }
+    
+    .search {
+        font-size:30px;
+        font-family: "Creepster", system-ui;
+        margin:0;
+        color:rgb(218, 205, 205);
+        margin-right:1em;
+        border:none;
+        background:none;
+    }
+    
+    .search:hover {
+        text-shadow: rgb(124, 122, 113) 2px 0 10px;
+        background:none;
+        position:relative;
+        bottom:5px;
+    
+    }
+    
+    
+    
+    .search-input {
+        background: #222325;
+        color:rgb(218, 205, 205);
+        font-size:20px;
+        font-family: "Creepster", system-ui;
+    
+    }
+    .search-btn {
+        background:none;
+    
+    }
+    .search-close {
+        background:none;
+        color:#e24646;
+    }
+    
+    
+    
+    .header-links {
+    margin-right:2em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    
+    }
+    
+   
+    
+    .credit {
+        color:#5a5b5f;
+        font-size:20px;
+        margin-right:1em;
+        
+    }
+    
+    .footer-container h3 {
+        margin-top:10px;
+        font-weight: 400;
+        color:#d6c0c0;
+    
+    }
+    .top-movies {
+        margin:0 auto;
+        width:900px;
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        grid-template-columns: 200px 200px 200px 200px;
+        gap:20px;
+        background-color: rgb(41, 39, 39);
+        padding-bottom:20px;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size:42px;
+        color:#bbb7b7;
+        font-family: "Creepster", system-ui;
+        letter-spacing: 5px;
+        text-shadow: rgb(124, 122, 113) 5px 0 10px;
+    }
+
+    .details-btn {
+        background-color: none;
+        border:none;
+        color:#bbb7b7;
+    }
+    
+    button {
+        padding:10px;
+        border:none;
+        border-radius:10px;
+        background-color: #6d6969;
+        color:#bbb7b7;
+        margin:0.5px;
+    
+    }
+    
+    button:hover {
+    background-color: rgb(156, 17, 45);
+    }
+    
+    .trailer-btn {
+      border:1px solid rgb(238, 165, 165);
+      font-weight:400;
+      
+    }
+    
+    .footer {
+        margin:5em  auto;
+        width:900px;
+        padding:10px;
+        height:80px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+     
+        background-color: #222325;
+        border-radius:20px;
+        flex-direction: row;
+    
+     
+    }
+    
+    .credit {
+        color:#5a5b5f;
+        font-size:15px;
+        margin-right:1em;
+        
+    }
+
+    
+    
+
+}
+
+
+
+@media screen and (max-width: 412px){
+   
+    body{
+        width:100%;
+        margin:0;
+        padding:0;
+        
+    }
+    .header {
+        margin:0;
+        width:100%;
+        padding:10px;
+        height:80px;
+        border-radius: 0;
+        background-color: #222325;
+     }
+    
+     .header .logo {
+        margin:0;
+        padding:5px;
+     }
+    
+
+    .logo1 {
+       
+        display:none;
+    }
+    
+
+
+
+    .year-selection-menu {
+        border:none;
+        width:70px;
+        background: none;
+        font-family: "Creepster", system-ui;
+        font-size:20px;
+        color:rgb(248, 12, 12);
+    }
+    
+
+    .search-form {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .search {
+        font-size:20px;
+        font-family: "Creepster", system-ui;
+        margin:0;
+        color:rgb(218, 205, 205);
+        margin-right:1em;
+        border:none;
+        background:none;
+        display:flex;
+    }
+    
+    .search:hover {
+        text-shadow: rgb(124, 122, 113) 2px 0 10px;
+        background:none;
+        position:relative;
+        bottom:5px;
+    
+    }
+    
+  
+    
+    .search-input {
+        background: #222325;
+        color:rgb(218, 205, 205);
+        font-size:15px;
+        width:100px;
+        font-family: "Creepster", system-ui;
+    
+    }
+    .search-btn {
+        background:none;
+        
+    
+    }
+    .search-close {
+        background:none;
+        color:#e24646;
+        height:20px;
+        width:20px;
+    }
+    
+    
+    
+    .header-links {
+    margin-right:2em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    
+    }
+    
+    
+    .top-movies {
+        margin:0;
+        width:100%;
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        grid-template-columns: 200px  ;
+        gap:20px;
+        background-color: rgb(41, 39, 39);
+        padding-bottom:20px;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size:42px;
+        color:#bbb7b7;
+        font-family: "Creepster", system-ui;
+        letter-spacing: 5px;
+        text-shadow: rgb(124, 122, 113) 5px 0 10px;
+    }
+
+ 
+    
+    button {
+        padding:10px;
+        border:none;
+        border-radius:10px;
+        background-color: #6d6969;
+        color:#bbb7b7;
+        margin:0.5px;
+    
+    }
+    
+    button:hover {
+    background-color: rgb(156, 17, 45);
+    }
+    
+    .trailer-btn {
+      border:1px solid rgb(238, 165, 165);
+      font-weight:400;
+      
+    }
+    
+    .footer {
+        margin:2em  0;
+        width:100%;
+        padding:10px;
+        height:80px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+     
+        background-color: #222325;
+        border-radius:20px;
+        flex-direction: row;
+    
+     
+    }
+    
+    .credit {
+        color:#5a5b5f;
+        font-size:15px;
+        margin-right:1em;
+        
+    }
+
+    
+    
+
+}
